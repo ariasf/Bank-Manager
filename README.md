@@ -18,7 +18,7 @@ optional fields are
 * account_id
 
 Running the Application
-1. Pull the repository to your computer. 
-2. bundle
-3. rake db:create db:migate
-4. rails s
+1.  Pull the repository to your computer. 
+2.  bundle
+3.  rake db:create db:migate
+4.  rails s
