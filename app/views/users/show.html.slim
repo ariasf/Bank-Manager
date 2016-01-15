@@ -1,0 +1,34 @@
+.container
+	h1 = @user.name	
+	h5.right 
+		- if params[:query]
+			= "Filtered for " + params[:query] + " "
+			= link_to user_path(@user) do 
+				i class="fa fa-times-circle"
+	.row
+		.six.columns
+			h6 Expenses
+			= column_chart @user.grouped_expenses.rows			
+			table.table
+				tr
+					th Category
+					th Amount					
+				- @user.sorted_grouped_expenses.each do |a, b|
+					tr
+						td =a
+						td =b
+		.six.columns
+			h6 Income
+			= column_chart @user.grouped_income.rows
+			table.table
+				tr
+					th Category
+					th Amount					
+				- @user.sorted_grouped_income.each do |a, b|
+					tr
+						td =a
+						td =b
+
+	= render partial: "bank_transactions/table_header"
+	= render partial: 'bank_transactions/bank_transaction', collection: @bank_transactions, locals: { hide_user: true }
+	= paginate @bank_transactions

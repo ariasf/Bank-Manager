@@ -1,0 +1,7 @@
+.container
+	nav.navbar
+		ul.navbar-list
+			li.navbar-item
+				= link_to t("header.users"), users_path,  class: "navbar-link"
+			li.navbar-item
+				= link_to t("header.transactions"), bank_transactions_path,  class: "navbar-link"

@@ -1,0 +1,13 @@
+.container
+	.row
+		.six.columns
+			h1 =t("headers.all_transactions")
+		.six.columns.right
+			h6 Import Data
+			= form_tag import_bank_transactions_path, multipart: true do
+				= file_field_tag :file
+				br
+				= submit_tag "Import CSV"	
+	= render partial: "table_header"
+	= render @bank_transactions
+	= paginate @bank_transactions

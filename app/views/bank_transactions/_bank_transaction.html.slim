@@ -1,0 +1,17 @@
+- hide_user ||= false
+.box
+	.row
+		.two.columns
+			= bank_transaction.friendly_date
+		.four.columns
+			= bank_transaction.description
+		.two.columns			
+			= bank_transaction.amount	
+		.four.columns
+			- bank_transaction.categories.each do |a|
+				= link_to a.name, user_path(bank_transaction.user ,{:query => a.name}), class: "tag"
+	- unless hide_user
+		.row
+			.twleve.columns
+				= link_to bank_transaction.user.name, user_path(bank_transaction.user)
+hr

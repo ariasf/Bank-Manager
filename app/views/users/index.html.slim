@@ -1,0 +1,15 @@
+.container
+	h1 Users
+	table
+		tr
+			th
+				="ID - Name"
+			th
+				="Number of transactions"
+		- @users.each do |u|
+			tr	
+				td	
+					= u.bank_user_id.to_s + " - "
+					= link_to u.name, user_path(u)
+				td
+					= u.transactions_count
