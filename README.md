@@ -16,3 +16,9 @@ optional fields are
 * description
 * categories ( this must be a column seperated string )
 * account_id
+
+Running the Application
+1. Pull the repository to your computer. 
+2. bundle
+3. rake db:create db:migate
+4. rails s
